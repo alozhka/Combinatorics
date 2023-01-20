@@ -1,20 +1,34 @@
-﻿// Johnson–TrotterAlgorithm.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+﻿#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <boost/timer.hpp>
 
-#include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    vector<size_t> v =    { 8, 1,  2,  3,  4,  5,  6,  7,  8 };  // текущий
+    vector<size_t> p = v;                                                     // обратный
+    vector<int> d =       { 0, 0, -1, -1, -1, -1, -1, -1 };      // направление
+    boost::timer t;
+
+    size_t cur = 11;
+    t.restart();
+    while (cur != 1)
+    {
+        copy(v.begin(), v.end(), ostream_iterator<size_t>(cout, " "));
+        cout << endl;
+
+        cur = 7;
+        while (v[ p[cur] + d[cur] ] > cur)
+        {
+            d[cur] = -d[cur];
+            cur -= 1;
+        }
+        // замена текущей позиции с позицией с учётом сдвига
+        swap(  v[p[cur]], v[ p[cur] + d[cur] ]  );
+        // это значение в -1 степени
+        swap( p[  v[ p[cur] ]  ], p[cur]);
+    }
+    cout << t.elapsed() << endl;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
