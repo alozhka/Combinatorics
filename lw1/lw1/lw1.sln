@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nairana'sAlgorithm", "..\Na
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Johnson–TrotterAlgorithm", "..\Johnson–TrotterAlgorithm\Johnson–TrotterAlgorithm.vcxproj", "{9814D458-13D3-4066-8935-522BD83D2A97}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RandomPrermutationsAlgorithm", "RandomPrermutationsAlgorithm\RandomPrermutationsAlgorithm.vcxproj", "{909570D4-575D-4423-9085-DC8FF15566FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{9814D458-13D3-4066-8935-522BD83D2A97}.Release|x64.Build.0 = Release|x64
 		{9814D458-13D3-4066-8935-522BD83D2A97}.Release|x86.ActiveCfg = Release|Win32
 		{9814D458-13D3-4066-8935-522BD83D2A97}.Release|x86.Build.0 = Release|Win32
+		{909570D4-575D-4423-9085-DC8FF15566FA}.Debug|x64.ActiveCfg = Debug|x64
+		{909570D4-575D-4423-9085-DC8FF15566FA}.Debug|x64.Build.0 = Debug|x64
+		{909570D4-575D-4423-9085-DC8FF15566FA}.Debug|x86.ActiveCfg = Debug|Win32
+		{909570D4-575D-4423-9085-DC8FF15566FA}.Debug|x86.Build.0 = Debug|Win32
+		{909570D4-575D-4423-9085-DC8FF15566FA}.Release|x64.ActiveCfg = Release|x64
+		{909570D4-575D-4423-9085-DC8FF15566FA}.Release|x64.Build.0 = Release|x64
+		{909570D4-575D-4423-9085-DC8FF15566FA}.Release|x86.ActiveCfg = Release|Win32
+		{909570D4-575D-4423-9085-DC8FF15566FA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
