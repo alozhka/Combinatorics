@@ -72,4 +72,6 @@ int main()
 
     createCompositions(cout, size);
     cout << endl;
+
+    return 0;
 }
