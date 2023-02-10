@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <vector>
 #include <algorithm>
 
@@ -35,7 +35,7 @@ void createCompositions(ostream& ostr, size_t size)
     vector<size_t> v;
     size_t curr = 0;
 
-    // инициализация
+    // РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
     for (int i = 0; i < size; i++)
     {
         v.push_back(1);
@@ -45,7 +45,7 @@ void createCompositions(ostream& ostr, size_t size)
 
     while (v.size() > 1)
     {
-        // ищем самый левый минимальный индекс
+        // РёС‰РµРј СЃР°РјС‹Р№ Р»РµРІС‹Р№ РјРёРЅРёРјР°Р»СЊРЅС‹Р№ РёРЅРґРµРєСЃ
         curr = findMinIndex(v);
 
         v[curr]++;
@@ -54,7 +54,7 @@ void createCompositions(ostream& ostr, size_t size)
             v.pop_back();
         }
 
-        // генерируем перестановки
+        // РіРµРЅРµСЂРёСЂСѓРµРј РїРµСЂРµСЃС‚Р°РЅРѕРІРєРё
         createPermutation(v);
     }
     ostr << endl;
@@ -66,7 +66,7 @@ int main()
     size_t size;
 
     setlocale(LC_ALL, "rus");
-    cout << "Введите число: ";
+    cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ: ";
 	cin >> size;
     cout << endl;
 
