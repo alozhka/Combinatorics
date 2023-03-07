@@ -4,7 +4,7 @@
 
 using namespace std;
 
-size_t findMinIndex(vector<size_t> &v)
+size_t findMinIndex(vector<size_t>& v)
 {
     size_t indexmin = 0, min = v[0];
 
@@ -67,7 +67,7 @@ int main()
 
     setlocale(LC_ALL, "rus");
     cout << "Введите число: ";
-	cin >> size;
+    cin >> size;
     cout << endl;
 
     createCompositions(cout, size);

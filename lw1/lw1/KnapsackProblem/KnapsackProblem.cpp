@@ -1,25 +1,40 @@
 ﻿#include <iostream>
 #include <vector>
+#include <set>
 using namespace std;
 
 struct item
 {
-    size_t weight, cost;
+    string name = "";
+    size_t weight = 0, cost = 0;
 };
 
-void knapsack(vector<item> &v, size_t max_cost, size_t max_weight)
+void knapsack(vector<item>& v, size_t max_cost, size_t max_weight)
 {
+    set<string> allItems, viewedItems;
 
+    for (auto& item : v)
+    {
+        allItems.insert(item.name);
+    }
+
+    for (int i = 0; i <= v.size(); i++)
+    {
+        if (viewedItems != allItems)
+        {
+
+        }
+    }
 }
 
-// 0–1 Задача о рюкзаке
+
 int main()
 {
     /**
     * n - количество элементов
     * S - максимальную стоимость
     * T - максимальный вес
-    */ 
+    */
     size_t n, S, T;
     setlocale(LC_ALL, "rus");
 
@@ -28,8 +43,8 @@ int main()
     vector <item> v(n);
     for (int i = 0; i < n; i++)
     {
-        cout << "\nВведите вес и стоимость " << i + 1 << " элемента: ";
-        cin >> v[i].weight >> v[i].cost;
+        cout << "\nВведите название, вес и стоимость " << i + 1 << " элемента: ";
+        cin >> v[i].name >> v[i].weight >> v[i].cost;
     }
 
     knapsack(v, S, T);

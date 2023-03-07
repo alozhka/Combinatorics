@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Johnson–TrotterAlgorithm"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RandomPrermutationsAlgorithm", "RandomPrermutationsAlgorithm\RandomPrermutationsAlgorithm.vcxproj", "{909570D4-575D-4423-9085-DC8FF15566FA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CompositionGenerationAlgorithm", "..\CompositionGenerationAlgorithm\CompositionGenerationAlgorithm.vcxproj", "{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KnapsackProblem", "KnapsackProblem\KnapsackProblem.vcxproj", "{783CEE8B-E7CA-401C-9E06-DB036228579A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +45,22 @@ Global
 		{909570D4-575D-4423-9085-DC8FF15566FA}.Release|x64.Build.0 = Release|x64
 		{909570D4-575D-4423-9085-DC8FF15566FA}.Release|x86.ActiveCfg = Release|Win32
 		{909570D4-575D-4423-9085-DC8FF15566FA}.Release|x86.Build.0 = Release|Win32
+		{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}.Debug|x64.ActiveCfg = Debug|x64
+		{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}.Debug|x64.Build.0 = Debug|x64
+		{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}.Debug|x86.ActiveCfg = Debug|Win32
+		{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}.Debug|x86.Build.0 = Debug|Win32
+		{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}.Release|x64.ActiveCfg = Release|x64
+		{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}.Release|x64.Build.0 = Release|x64
+		{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}.Release|x86.ActiveCfg = Release|Win32
+		{CE8C5DD5-F29C-44F2-A3A1-A3929A88C9BA}.Release|x86.Build.0 = Release|Win32
+		{783CEE8B-E7CA-401C-9E06-DB036228579A}.Debug|x64.ActiveCfg = Debug|x64
+		{783CEE8B-E7CA-401C-9E06-DB036228579A}.Debug|x64.Build.0 = Debug|x64
+		{783CEE8B-E7CA-401C-9E06-DB036228579A}.Debug|x86.ActiveCfg = Debug|Win32
+		{783CEE8B-E7CA-401C-9E06-DB036228579A}.Debug|x86.Build.0 = Debug|Win32
+		{783CEE8B-E7CA-401C-9E06-DB036228579A}.Release|x64.ActiveCfg = Release|x64
+		{783CEE8B-E7CA-401C-9E06-DB036228579A}.Release|x64.Build.0 = Release|x64
+		{783CEE8B-E7CA-401C-9E06-DB036228579A}.Release|x86.ActiveCfg = Release|Win32
+		{783CEE8B-E7CA-401C-9E06-DB036228579A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
