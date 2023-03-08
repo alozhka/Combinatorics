@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{87AEECC2-C0E7-4667-8E1A-AC8FD37DC590}"
-	ProjectSection(SolutionItems) = preProject
-		GraphsHandler.hpp = GraphsHandler.hpp
-		GraphsHandler.cpp = GraphsHandler.cpp
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphColoring", "GraphColoring\GraphColoring.vcxproj", "{DDE132D5-2B7F-4FE0-8D07-E02C77C330E6}"
 EndProject
 Global
