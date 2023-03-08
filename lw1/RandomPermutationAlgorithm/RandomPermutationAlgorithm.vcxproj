@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{909570d4-575d-4423-9085-dc8ff15566fa}</ProjectGuid>
-    <RootNamespace>RandomPrermutationsAlgorithm</RootNamespace>
+    <ProjectGuid>{687012db-0f06-43b9-9752-0071df337b84}</ProjectGuid>
+    <RootNamespace>RandomPermutationAlgorithm</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="RandomPrermutationsAlgorithm.cpp" />
+    <ClCompile Include="RandomPermutationAlgorithm.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

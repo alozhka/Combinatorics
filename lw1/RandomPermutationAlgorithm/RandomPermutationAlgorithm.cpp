@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <vector>
-#include <stdlib.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -14,11 +14,11 @@ int main()
     cout << "Введите количество чисел в рандомной последовательности: ";
     cin >> max;
     cout << endl;
-    cout << "Введите количество глубину перетасовки: ";
+    cout << "Введите глубину перетасовки: ";
     cin >> random_deep;
     cout << endl;
 
-    for (int i = 0; i <= max ; i++) // инициализация
+    for (int i = 0; i <= max; i++) // инициализация
     {
         v.push_back(i);
     }
