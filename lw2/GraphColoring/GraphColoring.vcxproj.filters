@@ -28,6 +28,9 @@
     <Text Include="input1.txt">
       <Filter>InputData</Filter>
     </Text>
+    <Text Include="example_input.txt">
+      <Filter>InputData</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.hpp">

@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input1.txt" />
+    <Text Include="example_input.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.hpp" />

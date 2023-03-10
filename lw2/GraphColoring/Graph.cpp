@@ -79,14 +79,14 @@ ColorSet findNearestNodes(const AdjMatrix& adj, const size_t& node)
 }
 ColorSet findSecondOrderNodes(const AdjMatrix& adj, const size_t& node)
 {
-	ColorSet s, nearest = findNearestNodes(adj, node);
+	ColorSet s, nearestNodes = findNearestNodes(adj, node);
 	size_t amountVert = adj.size() - 1;
 
-	for (auto nearestNode : nearest)
+	for (auto nearestNode : nearestNodes)
 	{
 		for (int i = 1; i <= amountVert; i++)
 		{
-			if (adj[nearestNode][i] && (node != i) && !nearest.count(i))
+			if (adj[nearestNode][i] && (node != i) && !nearestNodes.count(i))
 			{
 				s.insert(i);
 			}
@@ -95,26 +95,76 @@ ColorSet findSecondOrderNodes(const AdjMatrix& adj, const size_t& node)
 
 	return s;
 }
+
 void connectNodes(AdjMatrix& adj, const size_t& destNode, const size_t& sourceNode)
 {
 	size_t amountNodes = adj.size() - 1;
 	for (int i = 1; i <= amountNodes; i++)
 	{
-		adj[destNode][i] |= adj[sourceNode][i];
+		if (destNode != i)
+		{
+			adj[destNode][i] |= adj[sourceNode][i];
+		}
 		adj[sourceNode][i] = 0;
 	}
 	for (int i = 1; i <= amountNodes; i++)
 	{
-		adj[i][destNode] |= adj[i][sourceNode];
+		if (destNode != i)
+		{
+			adj[i][destNode] |= adj[i][sourceNode];
+		}
 		adj[i][sourceNode] = 0;
+	}
+}
+
+size_t getNotColoredNode(const ColorSet& isColored, const size_t amountVert)
+{
+	for (int i = 1; i <= amountVert; i++)
+	{
+		if (!isColored.count(i))
+		{
+			return i;
+		}
+	}
+	if (isColored.empty())
+	{
+		return 1;
 	}
 }
 
 void graphColoring(AdjMatrix& adj)
 {
 	size_t amountVert = adj.size() - 1;
-	std::vector<size_t> nodeColors(amountVert);
-	ColorSet remote, isColored;
+	std::vector<size_t> nodeColors(amountVert + 1);
+	ColorSet remoteNodes, isColored;
 
-	remote = findSecondOrderNodes(adj, 1);
+	remoteNodes = findSecondOrderNodes(adj, 1);
+	for (size_t color = 1, node = 1, secondNode = 0; color <= amountVert; color++, node = 1)
+	{
+		//берём незакрашенную вершину
+		node = getNotColoredNode(isColored, amountVert);
+
+		// красим её текущим цветом
+		isColored.insert(node);
+		nodeColors[node] = color;
+
+		// берём любой узел 2-го порядка, красим его, 
+		// склеиваем с текущим, повторяем, пока будуут узлы 2-го порядка
+		for (
+			 remoteNodes = findSecondOrderNodes(adj, node);
+			!remoteNodes.empty();
+			 remoteNodes = findSecondOrderNodes(adj, node)
+			)
+		{
+			secondNode = *remoteNodes.begin();
+			isColored.insert(secondNode);
+			nodeColors[secondNode] = color;
+			connectNodes(adj, node, secondNode);
+		}
+	}
+
+	for (int i = 1; i <= amountVert; i++)
+	{
+		std::cout << i << ": " << nodeColors[i] << std::endl;
+	}
 }

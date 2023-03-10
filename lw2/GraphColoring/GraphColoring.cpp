@@ -26,7 +26,6 @@ int main()
 	}
 	else
 	{
-		printMatrix(adj);
 		graphColoring(adj);
 	}
 
