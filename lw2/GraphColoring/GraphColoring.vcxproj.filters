@@ -9,11 +9,11 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Implementaation Files">
-      <UniqueIdentifier>{3c724bbb-0dcf-48e7-a4da-5d23fa845ecb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="InputData">
       <UniqueIdentifier>{ee217449-86da-4766-ad1b-ffd588bdb2d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation Files">
+      <UniqueIdentifier>{3c724bbb-0dcf-48e7-a4da-5d23fa845ecb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -21,7 +21,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Graph.cpp">
-      <Filter>Implementaation Files</Filter>
+      <Filter>Implementation Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

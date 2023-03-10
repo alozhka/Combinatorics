@@ -101,18 +101,12 @@ void connectNodes(AdjMatrix& adj, const size_t& destNode, const size_t& sourceNo
 	size_t amountNodes = adj.size() - 1;
 	for (int i = 1; i <= amountNodes; i++)
 	{
-		if (destNode != i)
-		{
-			adj[destNode][i] |= adj[sourceNode][i];
-		}
+		adj[destNode][i] |= adj[sourceNode][i];
 		adj[sourceNode][i] = 0;
 	}
 	for (int i = 1; i <= amountNodes; i++)
 	{
-		if (destNode != i)
-		{
-			adj[i][destNode] |= adj[i][sourceNode];
-		}
+		adj[i][destNode] |= adj[i][sourceNode];
 		adj[i][sourceNode] = 0;
 	}
 }
