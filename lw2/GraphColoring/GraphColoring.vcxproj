@@ -131,7 +131,7 @@
     <ClCompile Include="Graph.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input.txt" />
+    <Text Include="input1.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.hpp" />

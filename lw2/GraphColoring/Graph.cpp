@@ -28,7 +28,7 @@ bool initMatrix(AdjMatrix& adj, const std::string& dest)
 		adj.resize(amountVert + 1, std::vector<size_t>(amountVert + 1));
 
 		size_t node1 = 0, node2 = 0, weight = 0, maxnode = 0;
-		for (int i = 1; !in.eof() && i <= amountVert; i++)
+		for (int i = 1; !in.eof(); i++)
 		{
 			if (!in.eof()) in >> node1;
 			if (!in.eof()) in >> node2;
@@ -70,12 +70,11 @@ ColorSet findNearestNodes(const AdjMatrix& adj, const size_t& node)
 	size_t amountVert = adj.size() - 1;
 	for (int i = 1; i <= amountVert; i++)
 	{
-		if (adj[node][i] > 0)
+		if (adj[node][i])
 		{
 			s.insert(i);
 		}
 	}
-	for (auto el : s) std::cout << el;
 	return s;
 }
 ColorSet findSecondOrderNodes(const AdjMatrix& adj, const size_t& node)
@@ -83,44 +82,38 @@ ColorSet findSecondOrderNodes(const AdjMatrix& adj, const size_t& node)
 	ColorSet s, nearest = findNearestNodes(adj, node);
 	size_t amountVert = adj.size() - 1;
 
-	for (int i = 1; i <= amountVert; i++)
+	for (auto nearestNode : nearest)
 	{
-		if (!adj[node][i] && node != i)
+		for (int i = 1; i <= amountVert; i++)
 		{
-			s.insert(i);
+			if (adj[nearestNode][i] && (node != i) && !nearest.count(i))
+			{
+				s.insert(i);
+			}
 		}
 	}
+
 	return s;
 }
-void connectNodes(const AdjMatrix& adj, const size_t& node1, const size_t& node2)
+void connectNodes(const AdjMatrix& adj, const size_t& destNode, const size_t& sourceNode)
 {
+	size_t amountNodes = adj.size();
+	for (int i = 0; i <= amountNodes; i++)
+	{
 
+	}
 }
 
 void graphColoring(AdjMatrix& adj)
 {
 	size_t amountVert = adj.size() - 1;
 	std::vector<size_t> nodeColors(amountVert);
-	ColorSet remote, colored;
+	ColorSet remote, isColored;
 
-	
-	for (size_t node = 1, color = 1; color <= amountVert; color++)
+	remote = findSecondOrderNodes(adj, 1);
+
+	for (size_t node = 1, color = 1; color <= amountVert; node = 1, color++)
 	{
-		// выбираем любую вершину и красим
-		if (colored.find(node) != colored.)
-		colored.insert(node);
-		nodeColors[node] = color;
-
-		// находим вершину окрестности 2 порядка, пока такие есть
-		remote = findSecondOrderNodes(adj, node);
-		while (remote.size() > 0)
-		{
-			// красим вершину 2 порядка
-			node = *remote.begin();
-			colored.insert(node);
-			nodeColors[node] = color;
-
-			//склеиваем вершины
-		}
+		
 	}
 }
