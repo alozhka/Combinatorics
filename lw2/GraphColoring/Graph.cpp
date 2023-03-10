@@ -95,12 +95,18 @@ ColorSet findSecondOrderNodes(const AdjMatrix& adj, const size_t& node)
 
 	return s;
 }
-void connectNodes(const AdjMatrix& adj, const size_t& destNode, const size_t& sourceNode)
+void connectNodes(AdjMatrix& adj, const size_t& destNode, const size_t& sourceNode)
 {
-	size_t amountNodes = adj.size();
-	for (int i = 0; i <= amountNodes; i++)
+	size_t amountNodes = adj.size() - 1;
+	for (int i = 1; i <= amountNodes; i++)
 	{
-
+		adj[destNode][i] |= adj[sourceNode][i];
+		adj[sourceNode][i] = 0;
+	}
+	for (int i = 1; i <= amountNodes; i++)
+	{
+		adj[i][destNode] |= adj[i][sourceNode];
+		adj[i][sourceNode] = 0;
 	}
 }
 
@@ -111,9 +117,4 @@ void graphColoring(AdjMatrix& adj)
 	ColorSet remote, isColored;
 
 	remote = findSecondOrderNodes(adj, 1);
-
-	for (size_t node = 1, color = 1; color <= amountVert; node = 1, color++)
-	{
-		
-	}
 }
