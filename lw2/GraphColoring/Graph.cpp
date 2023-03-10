@@ -126,7 +126,7 @@ size_t getNotColoredNode(const ColorSet& isColored, const size_t amountVert)
 	}
 }
 
-void graphColoring(AdjMatrix& adj)
+void graphColoring(AdjMatrix adj)
 {
 	size_t amountVert = adj.size() - 1;
 	std::vector<size_t> nodeColors(amountVert + 1);
