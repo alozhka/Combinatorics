@@ -7,6 +7,7 @@ lw1:
  * Random Permutation algorithm,
  * Composition Generation algorithm,
  * Knapsack problem (not done);
+
 lw2:
 ----
  * Graph coloring by Ershov's algorithm
