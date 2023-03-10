@@ -1,4 +1,4 @@
-#include "Graph.hpp"
+п»ї#include "Graph.hpp"
 #include <fstream>
 #include <unordered_set>
 
@@ -70,7 +70,7 @@ ColorSet findNearestNodes(const AdjMatrix& adj, const size_t& node)
 	size_t amountVert = adj.size() - 1;
 	for (int i = 1; i <= amountVert; i++)
 	{
-		if (adj[node][i])
+		if (adj[node][i] > 0)
 		{
 			s.insert(i);
 		}
@@ -106,18 +106,21 @@ void graphColoring(AdjMatrix& adj)
 	
 	for (size_t node = 1, color = 1; color <= amountVert; color++)
 	{
-		// выбираем любую вершину и красим
+		// РІС‹Р±РёСЂР°РµРј Р»СЋР±СѓСЋ РІРµСЂС€РёРЅСѓ Рё РєСЂР°СЃРёРј
+		if (colored.find(node) != colored.)
 		colored.insert(node);
 		nodeColors[node] = color;
 
-		// находим вершину окрестности 2 порядка
+		// РЅР°С…РѕРґРёРј РІРµСЂС€РёРЅСѓ РѕРєСЂРµСЃС‚РЅРѕСЃС‚Рё 2 РїРѕСЂСЏРґРєР°, РїРѕРєР° С‚Р°РєРёРµ РµСЃС‚СЊ
 		remote = findSecondOrderNodes(adj, node);
+		while (remote.size() > 0)
+		{
+			// РєСЂР°СЃРёРј РІРµСЂС€РёРЅСѓ 2 РїРѕСЂСЏРґРєР°
+			node = *remote.begin();
+			colored.insert(node);
+			nodeColors[node] = color;
 
-		// красим вершину 2 порядка
-		node = *remote.begin();
-		colored.insert(node);
-		nodeColors[node] = color;
-
-		//склеиваем вершины
+			//СЃРєР»РµРёРІР°РµРј РІРµСЂС€РёРЅС‹
+		}
 	}
 }
