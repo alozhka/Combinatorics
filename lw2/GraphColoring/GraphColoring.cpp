@@ -6,8 +6,6 @@ using namespace std;
 
 optional<string> parseCmd(const int argc, char* argv[])
 {
-	string source;
-
 	if (argc != 2)
 	{
 		cout << "Invalid input data\n";
