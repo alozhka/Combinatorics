@@ -6,7 +6,7 @@ lw1:
  * Johnson–Trotter's algorithm,
  * Random Permutation algorithm,
  * Composition Generation algorithm,
- * Knapsack problem (not done);
+ * Knapsack problem;
 
 lw2:
 ----
