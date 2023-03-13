@@ -4,6 +4,10 @@
 #include <optional>
 #include <vector>
 
+struct item
+{
+    size_t weight = 0, cost = 0;
+};
 struct InputType
 {
     /**
@@ -11,15 +15,12 @@ struct InputType
     * S - максимальную стоимость
     * T - максимальный вес
     */
-    size_t n, S, T;
+    size_t n = 0, S = 0, T = 0;
     std::vector<item> items;
 };
 
-struct item
-{
-    size_t weight = 0, cost = 0;
-};
 
 std::optional<std::string> parseCmd(int argc, char* argv[]);
 std::optional<InputType> parseInFile(std::string dest);
-void solveBackpack();
+
+void solveKnapsack(size_t k, size_t maxWeight, size_t maxCost, const std::vector<item>& items);

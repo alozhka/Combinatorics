@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    solveBackpack();
+    solveKnapsack(in->n, in->S, in->T, in->items);
 
     return 0;
 }
