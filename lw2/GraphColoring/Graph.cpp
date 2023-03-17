@@ -111,12 +111,13 @@ void connectNodes(AdjMatrix& adj, const size_t& destNode, const size_t& sourceNo
 	}
 }
 
-size_t getNotColoredNode(const ColorSet& isColored, const size_t amountVert)
+size_t getNotColoredNode(const ColorSet& isColored, const size_t amountVert, size_t& color)
 {
 	for (int i = 1; i <= amountVert; i++)
 	{
 		if (!isColored.count(i))
 		{
+			color++;
 			return i;
 		}
 	}
@@ -133,10 +134,10 @@ void graphColoring(AdjMatrix adj)
 	ColorSet remoteNodes, isColored;
 
 	remoteNodes = findSecondOrderNodes(adj, 1);
-	for (size_t color = 1, node = 1, secondNode = 0; color <= amountVert; color++, node = 1)
+	for (size_t color = 0, node = 1, secondNode = 0; isColored.size() < amountVert; node = 1)
 	{
 		//берём незакрашенную вершину
-		node = getNotColoredNode(isColored, amountVert);
+		node = getNotColoredNode(isColored, amountVert, color);
 
 		// красим её текущим цветом
 		isColored.insert(node);
